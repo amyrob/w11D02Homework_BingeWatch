@@ -6,8 +6,9 @@ const BingeWatchApp = function ( hoursInDay ) {
 };
 
 BingeWatchApp.prototype.getDaysNeeded = function (tvShow) {
+var tvShowinHours = tvShow.fullDuration() / 60;
 var hours = this.hoursInDay
-return tvShow / hours;
+return Math.ceil(tvShowinHours / hours);
 };
 
 module.exports = BingeWatchApp;

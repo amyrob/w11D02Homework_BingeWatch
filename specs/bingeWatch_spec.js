@@ -15,7 +15,9 @@ describe('BingeWatchApp', function() {
   beforeEach( function () {
     bingeWatchApp = new BingeWatchApp(5);
     tvShow = new TvShow('Ru Pauls Drag Race')
-
+    season1 = new Season(1, 720);
+    season2 = new Season(2, 735);
+    season3 = new Season(3, 742);
   });
 
   it('should get hours user can spend watching per day', function () {
@@ -27,8 +29,7 @@ describe('BingeWatchApp', function() {
     tvShow.addSeason(season1);
     tvShow.addSeason(season2);
     tvShow.addSeason(season3);
-    tvShow.fullDuration();
-    const result = bingeWatchApp.getDaysNeeded(tvShow, bingeWatchApp);
-    assert.strictEqual(result, 439.4)
+    const result = bingeWatchApp.getDaysNeeded(tvShow);
+    assert.strictEqual(result, 8);
   });
 });
